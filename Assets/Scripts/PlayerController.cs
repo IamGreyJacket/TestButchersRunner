@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Min(0f)] private float _turnTime = 1f;
     [SerializeField, Min(1f)] private float _turnSpeed = 1f; //speed while turning
     [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSteps;
+
     public Rigidbody Rigidbody => _rigidbody;
 
 
@@ -48,20 +51,29 @@ public class PlayerController : MonoBehaviour
             _sideInput = pointerDelta.x;
         }
         else _sideInput = 0;
-        if (Input.GetKey(KeyCode.R))
-        {
-            StartWalking();
-        }
-        else if (Input.GetKey(KeyCode.F))
-        {
-            StopWalking();
-        }
+    }
+
+    public void PlayAudio(AudioClip clip, bool loop=false)
+    {
+        _audioSource.loop = loop;
+        _audioSource.PlayOneShot(clip);
+    }
+
+    private void PlayWalkAudio()
+    {
+        _audioSteps.Play();
+    }
+
+    private void StopWalkAudio()
+    {
+        _audioSteps.Stop();
     }
 
     public void StartWalking()
     {
         _canWalk = true;
         StartCoroutine(Walk());
+        PlayWalkAudio();
         //_playerAnimator.PlayWalk();
         //
 
@@ -70,6 +82,7 @@ public class PlayerController : MonoBehaviour
     public void StopWalking()
     {
         _canWalk = false;
+        StopWalkAudio();
         //_playerAnimator.PlayIdle();
     }
 

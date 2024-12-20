@@ -15,8 +15,6 @@ public class PlayerWealth : MonoBehaviour
     [SerializeField] private int _maxWealth = 300;
     public int MaxWealth => _maxWealth;
     [SerializeField] private List<GameObject> _wealthLevelModels;
-    [SerializeField] private List<Animation> _wealthModelAnimations;
-    [SerializeField] private Animator _playerAnimator;
 
     private int _currentWealth = 0;
     public int WealthPoints => _currentWealth;

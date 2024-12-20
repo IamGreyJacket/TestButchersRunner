@@ -47,8 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _requiredLevel: 1
   _winMultiplier: 1.5
-  _animator: {fileID: 0}
-  _openAnimation: {fileID: 0}
+  _animator: {fileID: 852300209588093294}
 --- !u!65 &8933019192038254390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -165,7 +164,7 @@ Animator:
   m_GameObject: {fileID: 9110724359458412224}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d677fe028807df7428c1a1b0e07aafff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
