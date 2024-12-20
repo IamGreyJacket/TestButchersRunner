@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wealthChange: -20
   _rotationSpeed: 35
+  _audioOnPickup: {fileID: 8300000, guid: c28d642f278f4b54ba04179a90f380c4, type: 3}
 --- !u!136 &6214334621958801317
 CapsuleCollider:
   m_ObjectHideFlags: 0
